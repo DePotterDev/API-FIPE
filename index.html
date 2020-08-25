@@ -4,34 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Fipe Api</title>
 </head>
 <body>
-<div class="container">
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">CAR<span class="fat">RIO</span></a>
+        </div>
+    </nav>
+<div class="container flex">
+
+    <div class="left-column">
+    <h1>Calculate the resell value <br> of your car.</h1>
+    <p>Nullam tincidunt vehicula euismod. Vivamus lacinia ex vehicula posuere pulvinar. Nam aliquet turpis non nisl condimentum auctor. Nulla vitae dolor porttitor, posuere sem sed, ultrices nulla.</p>
+
     <form >
         <label for="brand">Select brand:</label>
-        <select name="brand" id="brand">
+        <select name="brand" id="brand" onchange="selectedBrand(brand);">
             <!-- car brand names -->
         </select>
         <br>
         <label for="model">Select model:</label>
-        <select name="model" id="model">
+        <select name="model" id="model" onchange="selectedModel(model);">
             <option value="0">Select first your brand</option>
             <!-- car models -->
         </select>
         <br>
         <label for="year">Select year:</label>
-        <select name="year" id="year">
+        <select name="year" id="year" onchange="selectedYear(year);">
             <option value="0">Select first your model</option>
             <!-- car years -->
         </select>
         <br>
-
-        <button type="submit">Check the price</button>
-
     </form>
+
+    <div class="price">
+        <h2>Price:</h2>
+        <h2 id="price"></h2>
+    </div>
+    </div>
+
+    <div class="right-column">
+
+        <div class="circle"></div>
+        <img src="media/SPORT.webp" alt="Jimny">
+        <div class="text-middle">
+            <p>
+                Suzuki<br>
+                Jimny 4SPORT DESERT 1.3 16V<br>
+                2019 Gasolina<br>
+                <strong>R$ 76.230,00</strong>
+            </p>
+        </div>
+    </div>
+
 </div>
 
 

@@ -13,10 +13,17 @@ class Fipe {
         return models;
     }
 
-    async getYears(model, brand){
+    async getYears(brand, model){
         const yearResponse = await fetch(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${brand}/modelos/${model}/anos`);
         const year = await yearResponse.json();
-        console.log(year);
+        // console.log(year);
         return year;
+    }
+
+    async getPrice(brand, model, year){
+        const priceResponse = await fetch(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${brand}/modelos/${model}/anos/${year}`)
+
+        const price = await priceResponse.json();
+        return price;
     }
 }

@@ -5,7 +5,7 @@ class UI{
 
         for (let i = 0; i < json.length ; i++){
             let obj = json[i];
-            console.log(obj.nome);
+            // console.log(obj.nome);
             output += `
             <option value="${obj.codigo}">${obj.nome}</option>
             `
@@ -25,10 +25,10 @@ class UI{
         document.getElementById('model').innerHTML = output  
     }
 
-    yearJson(year){
+    yearJson(years){
         let output = '';
 
-        year.forEach(function(year){
+        years.forEach(function(year){
             output += `
             <option value="${year.codigo}">${year.nome}</option>
             `
@@ -37,6 +37,13 @@ class UI{
         document.getElementById('year').innerHTML = output
     }
 
+
+    priceJson(price){
+        console.log(price);
+        document.getElementById('price').innerHTML = `
+        ${price.Valor}
+        `
+    }
 }
 
 
