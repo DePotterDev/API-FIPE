@@ -1,5 +1,10 @@
 
 class UI{
+    constructor(){
+        this.year = document.getElementById('year');
+        this.price = document.getElementById('price');
+    }
+
     brandJson(json){
         let output = '';
 
@@ -10,7 +15,10 @@ class UI{
             <option value="${obj.codigo}">${obj.nome}</option>
             `
         }
-        document.getElementById('brand').innerHTML = output
+        document.getElementById('brand').innerHTML = `
+        <option value="0">Choose the brand</option>
+        `;
+        document.getElementById('brand').innerHTML += output
     }
 
     modelJson(models){
@@ -22,7 +30,11 @@ class UI{
             `
        });
             
-        document.getElementById('model').innerHTML = output  
+       document.getElementById('model').innerHTML = `
+       <option value="0">Choose the model</option>
+       `;
+        document.getElementById('model').innerHTML += output;
+
     }
 
     yearJson(years){
@@ -34,7 +46,11 @@ class UI{
             `
         });
 
-        document.getElementById('year').innerHTML = output
+        document.getElementById('year').innerHTML = `
+        <option value="0">Choose the year</option>
+        `;
+        document.getElementById('year').innerHTML += output;
+
     }
 
 
@@ -44,6 +60,21 @@ class UI{
         ${price.Valor}
         `
     }
+
+    clearYear(){
+        this.year.innerHTML = '';
+    }
+
+    clearPrice(){
+        this.price.innerHTML = '';
+    }
+
+    selectFirstModel(){
+        this.year.innerHTML = `
+        <option value="0">Select first your model</option>
+        `;
+    }
+
 }
 
 

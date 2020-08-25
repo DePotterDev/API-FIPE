@@ -19,6 +19,10 @@ function selectedBrand(brand){
     const selectedBrand = brand.options[brand.selectedIndex].value;
     console.log("This is the selected brand: " + selectedBrand);
 
+    ui.clearYear();
+    ui.selectFirstModel();
+    ui.clearPrice();
+
     // Load the car models.
     fipe.getModel(selectedBrand).then(data=>{
         ui.modelJson(data);
@@ -34,6 +38,8 @@ function selectedBrand(brand){
 function selectedModel(model){
     const selectedModel = model.options[model.selectedIndex].value;
     console.log("This is the selected model: " + selectedModel);
+    
+    ui.clearPrice();
 
     carModel = selectedModel;
 
